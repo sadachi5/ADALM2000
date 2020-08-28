@@ -1,0 +1,6 @@
+install/old
+install/swig
+.*
+!.gitignore
+.git
+

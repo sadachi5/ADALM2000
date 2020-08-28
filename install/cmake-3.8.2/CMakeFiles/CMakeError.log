@@ -1,0 +1,3842 @@
+Determining if compiler supports C++ auto_ptr failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_58aaf/fast"
+make -f CMakeFiles/cmTC_58aaf.dir/build.make CMakeFiles/cmTC_58aaf.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_58aaf.dir/cm_cxx_auto_ptr.cxx.o
+/usr/bin/g++    -std=gnu++14 -o CMakeFiles/cmTC_58aaf.dir/cm_cxx_auto_ptr.cxx.o -c /home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx
+/home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:3:6: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+ std::auto_ptr<int> get_auto_ptr()
+      ^~~~~~~~
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:1:
+/usr/include/c++/6/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx: In function ‘std::auto_ptr<int> get_auto_ptr()’:
+/home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:5:8: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   std::auto_ptr<int> ptr;
+        ^~~~~~~~
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:1:
+/usr/include/c++/6/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:6:14: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   ptr = std::auto_ptr<int>(new int(0));
+              ^~~~~~~~
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:1:
+/usr/include/c++/6/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx: At global scope:
+/home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:10:23: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+ int use_auto_ptr(std::auto_ptr<int> ptr)
+                       ^~~~~~~~
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /home/debian/ADALM2000/cmake-3.8.2/Source/Checks/cm_cxx_auto_ptr.cxx:1:
+/usr/include/c++/6/bits/unique_ptr.h:49:28: note: declared here
+   template<typename> class auto_ptr;
+                            ^~~~~~~~
+Linking CXX executable cmTC_58aaf
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_58aaf.dir/link.txt --verbose=1
+/usr/bin/g++       -rdynamic CMakeFiles/cmTC_58aaf.dir/cm_cxx_auto_ptr.cxx.o  -o cmTC_58aaf 
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the environ exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e4931/fast"
+make -f CMakeFiles/cmTC_e4931.dir/build.make CMakeFiles/cmTC_e4931.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e4931.dir/CheckSymbolExists.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_e4931.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘environ’ undeclared (first use in this function)
+   return ((int*)(&environ))[argc];
+                   ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_e4931.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e4931.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e4931.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e4931/fast' failed
+make: *** [cmTC_e4931/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef environ
+  return ((int*)(&environ))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Checking whether C++ compiler has '__int64' failed to compile with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d2449/fast"
+make -f CMakeFiles/cmTC_d2449.dir/build.make CMakeFiles/cmTC_d2449.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d2449.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/g++  -DTEST_KWSYS_CXX_HAS___INT64   -o CMakeFiles/cmTC_d2449.dir/kwsysPlatformTestsCXX.cxx.o -c /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:24:1: error: ‘__int64’ does not name a type
+ __int64 f(__int64 n)
+ ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:30:3: error: ‘__int64’ was not declared in this scope
+   __int64 n = 0;
+   ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:31:29: error: ‘n’ was not declared in this scope
+   return static_cast<int>(f(n));
+                             ^
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:31:30: error: ‘f’ was not declared in this scope
+   return static_cast<int>(f(n));
+                              ^
+CMakeFiles/cmTC_d2449.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d2449.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_d2449.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d2449/fast' failed
+make: *** [cmTC_d2449/fast] Error 2
+
+
+Checking whether CXX compiler has environ in stdlib.h failed to compile with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c9709/fast"
+make -f CMakeFiles/cmTC_c9709.dir/build.make CMakeFiles/cmTC_c9709.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c9709.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/g++  -DTEST_KWSYS_CXX_HAS_ENVIRON_IN_STDLIB_H   -o CMakeFiles/cmTC_c9709.dir/kwsysPlatformTestsCXX.cxx.o -c /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:196:13: error: ‘environ’ was not declared in this scope
+   char* e = environ[0];
+             ^~~~~~~
+CMakeFiles/cmTC_c9709.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c9709.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_c9709.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c9709/fast' failed
+make: *** [cmTC_c9709/fast] Error 2
+
+
+Checking whether CXX compiler struct stat has st_mtimespec member failed to compile with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_81a83/fast"
+make -f CMakeFiles/cmTC_81a83.dir/build.make CMakeFiles/cmTC_81a83.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_81a83.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/g++  -DTEST_KWSYS_CXX_STAT_HAS_ST_MTIMESPEC   -o CMakeFiles/cmTC_81a83.dir/kwsysPlatformTestsCXX.cxx.o -c /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:57:15: error: ‘struct stat’ has no member named ‘st_mtimespec’; did you mean ‘st_mtim’?
+   (void)stat1.st_mtimespec.tv_sec;
+               ^~~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:58:15: error: ‘struct stat’ has no member named ‘st_mtimespec’; did you mean ‘st_mtim’?
+   (void)stat1.st_mtimespec.tv_nsec;
+               ^~~~~~~~~~~~
+CMakeFiles/cmTC_81a83.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_81a83.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_81a83.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_81a83/fast' failed
+make: *** [cmTC_81a83/fast] Error 2
+
+
+Checking whether CXX compiler has _atoi64 failed to compile with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_05b48/fast"
+make -f CMakeFiles/cmTC_05b48.dir/build.make CMakeFiles/cmTC_05b48.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_05b48.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/g++  -DTEST_KWSYS_CXX_HAS__ATOI64   -o CMakeFiles/cmTC_05b48.dir/kwsysPlatformTestsCXX.cxx.o -c /home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/kwsysPlatformTestsCXX.cxx:252:38: error: ‘_atoi64’ was not declared in this scope
+   return static_cast<int>(_atoi64(str));
+                                      ^
+CMakeFiles/cmTC_05b48.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_05b48.dir/kwsysPlatformTestsCXX.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_05b48.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/Source/kwsys/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_05b48/fast' failed
+make: *** [cmTC_05b48/fast] Error 2
+
+
+Determining if the function connect exists in the socket;dl failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1883c/fast"
+make -f CMakeFiles/cmTC_1883c.dir/build.make CMakeFiles/cmTC_1883c.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1883c.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_1883c.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1883c
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_1883c.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=connect    -rdynamic CMakeFiles/cmTC_1883c.dir/CheckFunctionExists.c.o  -o cmTC_1883c -lsocket -ldl 
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1883c.dir/build.make:97: recipe for target 'cmTC_1883c' failed
+make[1]: *** [cmTC_1883c] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1883c/fast' failed
+make: *** [cmTC_1883c/fast] Error 2
+
+
+Determining if the function recv exists in the network;dl failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c6bd4/fast"
+make -f CMakeFiles/cmTC_c6bd4.dir/build.make CMakeFiles/cmTC_c6bd4.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c6bd4.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=recv   -o CMakeFiles/cmTC_c6bd4.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c6bd4
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_c6bd4.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=recv    -rdynamic CMakeFiles/cmTC_c6bd4.dir/CheckFunctionExists.c.o  -o cmTC_c6bd4 -lnetwork -ldl 
+/usr/bin/ld: cannot find -lnetwork
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c6bd4.dir/build.make:97: recipe for target 'cmTC_c6bd4' failed
+make[1]: *** [cmTC_c6bd4] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c6bd4/fast' failed
+make: *** [cmTC_c6bd4/fast] Error 2
+
+
+Determining if the function idn2_lookup_ul exists in the idn2;dl;/usr/lib/arm-linux-gnueabihf/libssl.so;/usr/lib/arm-linux-gnueabihf/libcrypto.so failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b1d4d/fast"
+make -f CMakeFiles/cmTC_b1d4d.dir/build.make CMakeFiles/cmTC_b1d4d.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b1d4d.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=idn2_lookup_ul   -o CMakeFiles/cmTC_b1d4d.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b1d4d
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_b1d4d.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=idn2_lookup_ul    -rdynamic CMakeFiles/cmTC_b1d4d.dir/CheckFunctionExists.c.o  -o cmTC_b1d4d -lidn2 -ldl /usr/lib/arm-linux-gnueabihf/libssl.so /usr/lib/arm-linux-gnueabihf/libcrypto.so 
+/usr/bin/ld: cannot find -lidn2
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b1d4d.dir/build.make:99: recipe for target 'cmTC_b1d4d' failed
+make[1]: *** [cmTC_b1d4d] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b1d4d/fast' failed
+make: *** [cmTC_b1d4d/fast] Error 2
+
+
+Determining if files stdio.h;inttypes.h;sys/filio.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_24eee/fast"
+make -f CMakeFiles/cmTC_24eee.dir/build.make CMakeFiles/cmTC_24eee.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24eee.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_24eee.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:4:23: fatal error: sys/filio.h: No such file or directory
+ #include <sys/filio.h>
+                       ^
+compilation terminated.
+CMakeFiles/cmTC_24eee.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_24eee.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_24eee.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_24eee/fast' failed
+make: *** [cmTC_24eee/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/filio.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/sockio.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a02e3/fast"
+make -f CMakeFiles/cmTC_a02e3.dir/build.make CMakeFiles/cmTC_a02e3.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a02e3.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_a02e3.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:10:24: fatal error: sys/sockio.h: No such file or directory
+ #include <sys/sockio.h>
+                        ^
+compilation terminated.
+CMakeFiles/cmTC_a02e3.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a02e3.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a02e3.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a02e3/fast' failed
+make: *** [cmTC_a02e3/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/sockio.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;sys/utime.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_59be5/fast"
+make -f CMakeFiles/cmTC_59be5.dir/build.make CMakeFiles/cmTC_59be5.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_59be5.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_59be5.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:15:23: fatal error: sys/utime.h: No such file or directory
+ #include <sys/utime.h>
+                       ^
+compilation terminated.
+CMakeFiles/cmTC_59be5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_59be5.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_59be5.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_59be5/fast' failed
+make: *** [cmTC_59be5/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <sys/utime.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;crypto.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d12a2/fast"
+make -f CMakeFiles/cmTC_d12a2.dir/build.make CMakeFiles/cmTC_d12a2.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d12a2.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_d12a2.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:19:20: fatal error: crypto.h: No such file or directory
+ #include <crypto.h>
+                    ^
+compilation terminated.
+CMakeFiles/cmTC_d12a2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d12a2.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d12a2.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d12a2/fast' failed
+make: *** [cmTC_d12a2/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <crypto.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;des.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fe5be/fast"
+make -f CMakeFiles/cmTC_fe5be.dir/build.make CMakeFiles/cmTC_fe5be.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe5be.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_fe5be.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:19:17: fatal error: des.h: No such file or directory
+ #include <des.h>
+                 ^
+compilation terminated.
+CMakeFiles/cmTC_fe5be.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_fe5be.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_fe5be.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fe5be/fast' failed
+make: *** [cmTC_fe5be/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <des.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;idn2.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2ae2f/fast"
+make -f CMakeFiles/cmTC_2ae2f.dir/build.make CMakeFiles/cmTC_2ae2f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2ae2f.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_2ae2f.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:22:18: fatal error: idn2.h: No such file or directory
+ #include <idn2.h>
+                  ^
+compilation terminated.
+CMakeFiles/cmTC_2ae2f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2ae2f.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2ae2f.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2ae2f/fast' failed
+make: *** [cmTC_2ae2f/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <idn2.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;io.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_320ec/fast"
+make -f CMakeFiles/cmTC_320ec.dir/build.make CMakeFiles/cmTC_320ec.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_320ec.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_320ec.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:23:16: fatal error: io.h: No such file or directory
+ #include <io.h>
+                ^
+compilation terminated.
+CMakeFiles/cmTC_320ec.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_320ec.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_320ec.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_320ec/fast' failed
+make: *** [cmTC_320ec/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <io.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;krb.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_41f37/fast"
+make -f CMakeFiles/cmTC_41f37.dir/build.make CMakeFiles/cmTC_41f37.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_41f37.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_41f37.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:23:17: fatal error: krb.h: No such file or directory
+ #include <krb.h>
+                 ^
+compilation terminated.
+CMakeFiles/cmTC_41f37.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_41f37.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_41f37.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_41f37/fast' failed
+make: *** [cmTC_41f37/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <krb.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;libgen.h;limits.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;pem.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3ff9b/fast"
+make -f CMakeFiles/cmTC_3ff9b.dir/build.make CMakeFiles/cmTC_3ff9b.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ff9b.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_3ff9b.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:30:17: fatal error: pem.h: No such file or directory
+ #include <pem.h>
+                 ^
+compilation terminated.
+CMakeFiles/cmTC_3ff9b.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3ff9b.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3ff9b.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3ff9b/fast' failed
+make: *** [cmTC_3ff9b/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <pem.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;libgen.h;limits.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;rsa.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_64e9c/fast"
+make -f CMakeFiles/cmTC_64e9c.dir/build.make CMakeFiles/cmTC_64e9c.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64e9c.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_64e9c.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:32:17: fatal error: rsa.h: No such file or directory
+ #include <rsa.h>
+                 ^
+compilation terminated.
+CMakeFiles/cmTC_64e9c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_64e9c.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_64e9c.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_64e9c/fast' failed
+make: *** [cmTC_64e9c/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <rsa.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;libgen.h;limits.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;setjmp.h;sgtty.h;signal.h;ssl.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2d55c/fast"
+make -f CMakeFiles/cmTC_2d55c.dir/build.make CMakeFiles/cmTC_2d55c.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2d55c.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_2d55c.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:35:17: fatal error: ssl.h: No such file or directory
+ #include <ssl.h>
+                 ^
+compilation terminated.
+CMakeFiles/cmTC_2d55c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2d55c.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2d55c.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2d55c/fast' failed
+make: *** [cmTC_2d55c/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <ssl.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;libgen.h;limits.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;setjmp.h;sgtty.h;signal.h;stdbool.h;stdint.h;stdio.h;stdlib.h;string.h;strings.h;stropts.h;termio.h;termios.h;time.h;unistd.h;utime.h;x509.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c20b7/fast"
+make -f CMakeFiles/cmTC_c20b7.dir/build.make CMakeFiles/cmTC_c20b7.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c20b7.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_c20b7.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:47:18: fatal error: x509.h: No such file or directory
+ #include <x509.h>
+                  ^
+compilation terminated.
+CMakeFiles/cmTC_c20b7.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c20b7.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_c20b7.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c20b7/fast' failed
+make: *** [cmTC_c20b7/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <x509.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;libgen.h;limits.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;setjmp.h;sgtty.h;signal.h;stdbool.h;stdint.h;stdio.h;stdlib.h;string.h;strings.h;stropts.h;termio.h;termios.h;time.h;unistd.h;utime.h;process.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_232c0/fast"
+make -f CMakeFiles/cmTC_232c0.dir/build.make CMakeFiles/cmTC_232c0.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_232c0.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_232c0.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:47:21: fatal error: process.h: No such file or directory
+ #include <process.h>
+                     ^
+compilation terminated.
+CMakeFiles/cmTC_232c0.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_232c0.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_232c0.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_232c0/fast' failed
+make: *** [cmTC_232c0/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <process.h>
+
+
+int main(void){return 0;}
+
+Determining if files stdio.h;inttypes.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/resource.h;sys/select.h;sys/socket.h;sys/stat.h;sys/time.h;sys/types.h;sys/uio.h;sys/un.h;alloca.h;arpa/inet.h;arpa/tftp.h;assert.h;err.h;errno.h;fcntl.h;ifaddrs.h;libgen.h;limits.h;locale.h;net/if.h;netdb.h;netinet/in.h;netinet/tcp.h;poll.h;pwd.h;setjmp.h;sgtty.h;signal.h;stdbool.h;stdint.h;stdio.h;stdlib.h;string.h;strings.h;stropts.h;termio.h;termios.h;time.h;unistd.h;utime.h;stddef.h;dlfcn.h;malloc.h;memory.h;netinet/if_ether.h;stdint.h;sockio.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e7c10/fast"
+make -f CMakeFiles/cmTC_e7c10.dir/build.make CMakeFiles/cmTC_e7c10.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7c10.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_e7c10.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:53:20: fatal error: sockio.h: No such file or directory
+ #include <sockio.h>
+                    ^
+compilation terminated.
+CMakeFiles/cmTC_e7c10.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e7c10.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e7c10.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e7c10/fast' failed
+make: *** [cmTC_e7c10/fast] Error 2
+
+Source:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sockio.h>
+
+
+int main(void){return 0;}
+
+Determining size of __int64 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_29197/fast"
+make -f CMakeFiles/cmTC_29197.dir/build.make CMakeFiles/cmTC_29197.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_29197.dir/SIZEOF___INT64.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_29197.dir/SIZEOF___INT64.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:17:22: error: ‘__int64’ undeclared here (not in a function)
+ #define SIZE (sizeof(__int64))
+                      ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^~~~
+CMakeFiles/cmTC_29197.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_29197.dir/SIZEOF___INT64.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_29197.dir/SIZEOF___INT64.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_29197/fast' failed
+make: *** [cmTC_29197/fast] Error 2
+
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/SIZEOF___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the stricmp exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_78fdb/fast"
+make -f CMakeFiles/cmTC_78fdb.dir/build.make CMakeFiles/cmTC_78fdb.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_78fdb.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_78fdb.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘stricmp’ undeclared (first use in this function)
+   return ((int*)(&stricmp))[argc];
+                   ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_78fdb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_78fdb.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_78fdb.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_78fdb/fast' failed
+make: *** [cmTC_78fdb/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef stricmp
+  return ((int*)(&stricmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strcmpi exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_80994/fast"
+make -f CMakeFiles/cmTC_80994.dir/build.make CMakeFiles/cmTC_80994.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_80994.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_80994.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘strcmpi’ undeclared (first use in this function)
+   return ((int*)(&strcmpi))[argc];
+                   ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_80994.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_80994.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_80994.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_80994/fast' failed
+make: *** [cmTC_80994/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcmpi
+  return ((int*)(&strcmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strncmpi exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b8511/fast"
+make -f CMakeFiles/cmTC_b8511.dir/build.make CMakeFiles/cmTC_b8511.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b8511.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_b8511.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘strncmpi’ undeclared (first use in this function)
+   return ((int*)(&strncmpi))[argc];
+                   ^~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_b8511.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b8511.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b8511.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b8511/fast' failed
+make: *** [cmTC_b8511/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strncmpi
+  return ((int*)(&strncmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the inet_ntoa_r exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7acfd/fast"
+make -f CMakeFiles/cmTC_7acfd.dir/build.make CMakeFiles/cmTC_7acfd.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7acfd.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_7acfd.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘inet_ntoa_r’ undeclared (first use in this function)
+   return ((int*)(&inet_ntoa_r))[argc];
+                   ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_7acfd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7acfd.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7acfd.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7acfd/fast' failed
+make: *** [cmTC_7acfd/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef inet_ntoa_r
+  return ((int*)(&inet_ntoa_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the closesocket exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_99c40/fast"
+make -f CMakeFiles/cmTC_99c40.dir/build.make CMakeFiles/cmTC_99c40.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_99c40.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_99c40.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘closesocket’ undeclared (first use in this function)
+   return ((int*)(&closesocket))[argc];
+                   ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_99c40.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_99c40.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_99c40.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_99c40/fast' failed
+make: *** [cmTC_99c40/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef closesocket
+  return ((int*)(&closesocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the getpass_r exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f83a8/fast"
+make -f CMakeFiles/cmTC_f83a8.dir/build.make CMakeFiles/cmTC_f83a8.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f83a8.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_f83a8.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘getpass_r’ undeclared (first use in this function)
+   return ((int*)(&getpass_r))[argc];
+                   ^~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_f83a8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f83a8.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f83a8.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f83a8/fast' failed
+make: *** [cmTC_f83a8/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getpass_r
+  return ((int*)(&getpass_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strlcat exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2529a/fast"
+make -f CMakeFiles/cmTC_2529a.dir/build.make CMakeFiles/cmTC_2529a.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2529a.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_2529a.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘strlcat’ undeclared (first use in this function)
+   return ((int*)(&strlcat))[argc];
+                   ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_2529a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2529a.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2529a.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2529a/fast' failed
+make: *** [cmTC_2529a/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcat
+  return ((int*)(&strlcat))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the RAND_status exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_84205/fast"
+make -f CMakeFiles/cmTC_84205.dir/build.make CMakeFiles/cmTC_84205.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_84205.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_84205.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘RAND_status’ undeclared (first use in this function)
+   return ((int*)(&RAND_status))[argc];
+                   ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_84205.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_84205.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_84205.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_84205/fast' failed
+make: *** [cmTC_84205/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef RAND_status
+  return ((int*)(&RAND_status))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the RAND_screen exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_faae9/fast"
+make -f CMakeFiles/cmTC_faae9.dir/build.make CMakeFiles/cmTC_faae9.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_faae9.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_faae9.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘RAND_screen’ undeclared (first use in this function)
+   return ((int*)(&RAND_screen))[argc];
+                   ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_faae9.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_faae9.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_faae9.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_faae9/fast' failed
+make: *** [cmTC_faae9/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef RAND_screen
+  return ((int*)(&RAND_screen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the RAND_egd exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8fbc2/fast"
+make -f CMakeFiles/cmTC_8fbc2.dir/build.make CMakeFiles/cmTC_8fbc2.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fbc2.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_8fbc2.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘RAND_egd’ undeclared (first use in this function)
+   return ((int*)(&RAND_egd))[argc];
+                   ^~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_8fbc2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8fbc2.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8fbc2.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8fbc2/fast' failed
+make: *** [cmTC_8fbc2/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef RAND_egd
+  return ((int*)(&RAND_egd))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the _strtoi64 exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_018ec/fast"
+make -f CMakeFiles/cmTC_018ec.dir/build.make CMakeFiles/cmTC_018ec.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_018ec.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_018ec.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: error: ‘_strtoi64’ undeclared (first use in this function)
+   return ((int*)(&_strtoi64))[argc];
+                   ^~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:59:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_018ec.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_018ec.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_018ec.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_018ec/fast' failed
+make: *** [cmTC_018ec/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdio.h>
+#include <inttypes.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/resource.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <sys/un.h>
+#include <alloca.h>
+#include <arpa/inet.h>
+#include <arpa/tftp.h>
+#include <assert.h>
+#include <err.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <ifaddrs.h>
+#include <libgen.h>
+#include <limits.h>
+#include <locale.h>
+#include <net/if.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <poll.h>
+#include <pwd.h>
+#include <setjmp.h>
+#include <sgtty.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <stropts.h>
+#include <termio.h>
+#include <termios.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <stddef.h>
+#include <dlfcn.h>
+#include <malloc.h>
+#include <memory.h>
+#include <netinet/if_ether.h>
+#include <stdint.h>
+#include <sys/utsname.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _strtoi64
+  return ((int*)(&_strtoi64))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing Curl Test HAVE_IOCTLSOCKET failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_54bef/fast"
+make -f CMakeFiles/cmTC_54bef.dir/build.make CMakeFiles/cmTC_54bef.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54bef.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_IOCTLSOCKET  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_54bef.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:322:44: error: ‘FIONBIO’ undeclared (first use in this function)
+  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+                                            ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:322:44: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_54bef.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_54bef.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_54bef.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_54bef/fast' failed
+make: *** [cmTC_54bef/fast] Error 2
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_67100/fast"
+make -f CMakeFiles/cmTC_67100.dir/build.make CMakeFiles/cmTC_67100.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_67100.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_67100.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+Linking C executable cmTC_67100
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_67100.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H    -rdynamic CMakeFiles/cmTC_67100.dir/CurlTests.c.o  -o cmTC_67100 
+CMakeFiles/cmTC_67100.dir/CurlTests.c.o: In function `main':
+CurlTests.c:(.text+0xa): undefined reference to `IoctlSocket'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_67100.dir/build.make:97: recipe for target 'cmTC_67100' failed
+make[1]: *** [cmTC_67100] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_67100/fast' failed
+make: *** [cmTC_67100/fast] Error 2
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL_FIONBIO failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3844c/fast"
+make -f CMakeFiles/cmTC_3844c.dir/build.make CMakeFiles/cmTC_3844c.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3844c.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_IOCTLSOCKET_CAMEL_FIONBIO  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_3844c.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:378:32: error: ‘FIONBIO’ undeclared (first use in this function)
+         if(0 != ioctlsocket(0, FIONBIO, &flags))
+                                ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:378:32: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_3844c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3844c.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3844c.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3844c/fast' failed
+make: *** [cmTC_3844c/fast] Error 2
+
+Performing Curl Test HAVE_IOCTLSOCKET_FIONBIO failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5831f/fast"
+make -f CMakeFiles/cmTC_5831f.dir/build.make CMakeFiles/cmTC_5831f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5831f.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_IOCTLSOCKET_FIONBIO  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_5831f.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:405:32: error: ‘FIONBIO’ undeclared (first use in this function)
+         if(0 != ioctlsocket(0, FIONBIO, &flags))
+                                ^~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:405:32: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_5831f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5831f.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5831f.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5831f/fast' failed
+make: *** [cmTC_5831f/fast] Error 2
+
+Performing Curl Test HAVE_SETSOCKOPT_SO_NONBLOCK failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_89b22/fast"
+make -f CMakeFiles/cmTC_89b22.dir/build.make CMakeFiles/cmTC_89b22.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89b22.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_SETSOCKOPT_SO_NONBLOCK  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_89b22.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:501:43: error: ‘SO_NONBLOCK’ undeclared (first use in this function)
+         if(0 != setsockopt(0, SOL_SOCKET, SO_NONBLOCK, 0, 0))
+                                           ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:501:43: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_89b22.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_89b22.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_89b22.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_89b22/fast' failed
+make: *** [cmTC_89b22/fast] Error 2
+
+Performing Curl Test HAVE_SOCKADDR_IN6_SIN6_SCOPE_ID failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6373f/fast"
+make -f CMakeFiles/cmTC_6373f.dir/build.make CMakeFiles/cmTC_6373f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6373f.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_SOCKADDR_IN6_SIN6_SCOPE_ID  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_6373f.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+Linking C executable cmTC_6373f
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_6373f.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DHAVE_SOCKADDR_IN6_SIN6_SCOPE_ID  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H    -rdynamic CMakeFiles/cmTC_6373f.dir/CurlTests.c.o  -o cmTC_6373f 
+/usr/lib/gcc/arm-linux-gnueabihf/6/../../../arm-linux-gnueabihf/Scrt1.o: In function `_start':
+(.text+0x44): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_6373f.dir/build.make:97: recipe for target 'cmTC_6373f' failed
+make[1]: *** [cmTC_6373f] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6373f/fast' failed
+make: *** [cmTC_6373f/fast] Error 2
+
+Performing Curl Test HAVE_O_NONBLOCK failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_79fd9/fast"
+make -f CMakeFiles/cmTC_79fd9.dir/build.make CMakeFiles/cmTC_79fd9.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_79fd9.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_O_NONBLOCK  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_79fd9.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+Linking C executable cmTC_79fd9
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_79fd9.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DHAVE_O_NONBLOCK  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H    -rdynamic CMakeFiles/cmTC_79fd9.dir/CurlTests.c.o  -o cmTC_79fd9 
+/usr/lib/gcc/arm-linux-gnueabihf/6/../../../arm-linux-gnueabihf/Scrt1.o: In function `_start':
+(.text+0x44): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_79fd9.dir/build.make:97: recipe for target 'cmTC_79fd9' failed
+make[1]: *** [cmTC_79fd9] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_79fd9/fast' failed
+make: *** [cmTC_79fd9/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYADDR_R_5 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_71c25/fast"
+make -f CMakeFiles/cmTC_71c25.dir/build.make CMakeFiles/cmTC_71c25.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_71c25.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYADDR_R_5  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_71c25.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:106:23: error: storage size of ‘hdata’ isn’t known
+   struct hostent_data hdata;
+                       ^~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:127:8: error: too few arguments to function ‘gethostbyaddr_r’
+   rc = gethostbyaddr_r(address, length, type, &h, &hdata);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:172:12: note: declared here
+ extern int gethostbyaddr_r (const void *__restrict __addr, __socklen_t __len,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_71c25.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_71c25.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_71c25.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_71c25/fast' failed
+make: *** [cmTC_71c25/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYADDR_R_7 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f3516/fast"
+make -f CMakeFiles/cmTC_f3516.dir/build.make CMakeFiles/cmTC_f3516.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f3516.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYADDR_R_7  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_f3516.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:130:8: error: too few arguments to function ‘gethostbyaddr_r’
+   hp = gethostbyaddr_r(address, length, type, &h, buffer, 8192, &h_errnop);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:172:12: note: declared here
+ extern int gethostbyaddr_r (const void *__restrict __addr, __socklen_t __len,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_f3516.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f3516.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_f3516.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f3516/fast' failed
+make: *** [cmTC_f3516/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYADDR_R_5_REENTRANT failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_09190/fast"
+make -f CMakeFiles/cmTC_09190.dir/build.make CMakeFiles/cmTC_09190.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_09190.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYADDR_R_5_REENTRANT  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_09190.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:106:23: error: storage size of ‘hdata’ isn’t known
+   struct hostent_data hdata;
+                       ^~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:127:8: error: too few arguments to function ‘gethostbyaddr_r’
+   rc = gethostbyaddr_r(address, length, type, &h, &hdata);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:172:12: note: declared here
+ extern int gethostbyaddr_r (const void *__restrict __addr, __socklen_t __len,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_09190.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_09190.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_09190.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_09190/fast' failed
+make: *** [cmTC_09190/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYADDR_R_7_REENTRANT failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0e103/fast"
+make -f CMakeFiles/cmTC_0e103.dir/build.make CMakeFiles/cmTC_0e103.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0e103.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYADDR_R_7_REENTRANT  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_0e103.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:130:8: error: too few arguments to function ‘gethostbyaddr_r’
+   hp = gethostbyaddr_r(address, length, type, &h, buffer, 8192, &h_errnop);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:172:12: note: declared here
+ extern int gethostbyaddr_r (const void *__restrict __addr, __socklen_t __len,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_0e103.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0e103.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0e103.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0e103/fast' failed
+make: *** [cmTC_0e103/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_98ecb/fast"
+make -f CMakeFiles/cmTC_98ecb.dir/build.make CMakeFiles/cmTC_98ecb.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98ecb.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYNAME_R_3  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_98ecb.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:106:23: error: storage size of ‘hdata’ isn’t known
+   struct hostent_data hdata;
+                       ^~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:139:8: error: too few arguments to function ‘gethostbyname_r’
+   rc = gethostbyname_r(address, &h, &hdata);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:179:12: note: declared here
+ extern int gethostbyname_r (const char *__restrict __name,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_98ecb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_98ecb.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_98ecb.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_98ecb/fast' failed
+make: *** [cmTC_98ecb/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e69e3/fast"
+make -f CMakeFiles/cmTC_e69e3.dir/build.make CMakeFiles/cmTC_e69e3.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e69e3.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYNAME_R_5  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_e69e3.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:142:8: error: too few arguments to function ‘gethostbyname_r’
+   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:179:12: note: declared here
+ extern int gethostbyname_r (const char *__restrict __name,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_e69e3.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e69e3.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e69e3.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e69e3/fast' failed
+make: *** [cmTC_e69e3/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3_REENTRANT failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2a309/fast"
+make -f CMakeFiles/cmTC_2a309.dir/build.make CMakeFiles/cmTC_2a309.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a309.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYNAME_R_3_REENTRANT  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_2a309.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:106:23: error: storage size of ‘hdata’ isn’t known
+   struct hostent_data hdata;
+                       ^~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:139:8: error: too few arguments to function ‘gethostbyname_r’
+   rc = gethostbyname_r(address, &h, &hdata);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:179:12: note: declared here
+ extern int gethostbyname_r (const char *__restrict __name,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_2a309.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2a309.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_2a309.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2a309/fast' failed
+make: *** [cmTC_2a309/fast] Error 2
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5_REENTRANT failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d1a7f/fast"
+make -f CMakeFiles/cmTC_d1a7f.dir/build.make CMakeFiles/cmTC_d1a7f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d1a7f.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GETHOSTBYNAME_R_5_REENTRANT  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_d1a7f.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:142:8: error: too few arguments to function ‘gethostbyname_r’
+   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+        ^~~~~~~~~~~~~~~
+In file included from /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:93:0:
+/usr/include/netdb.h:179:12: note: declared here
+ extern int gethostbyname_r (const char *__restrict __name,
+            ^~~~~~~~~~~~~~~
+CMakeFiles/cmTC_d1a7f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d1a7f.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d1a7f.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d1a7f/fast' failed
+make: *** [cmTC_d1a7f/fast] Error 2
+
+Performing Curl Test HAVE_INET_NTOA_R_DECL failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6b257/fast"
+make -f CMakeFiles/cmTC_6b257.dir/build.make CMakeFiles/cmTC_6b257.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6b257.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_INET_NTOA_R_DECL  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_6b257.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:242:21: error: ‘inet_ntoa_r’ undeclared (first use in this function)
+   func = (func_type)inet_ntoa_r;
+                     ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:242:21: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_6b257.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6b257.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6b257.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6b257/fast' failed
+make: *** [cmTC_6b257/fast] Error 2
+
+Performing Curl Test HAVE_INET_NTOA_R_DECL_REENTRANT failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_baa84/fast"
+make -f CMakeFiles/cmTC_baa84.dir/build.make CMakeFiles/cmTC_baa84.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_baa84.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_INET_NTOA_R_DECL_REENTRANT  -DHAVE_STDIO_H -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UIO_H -DHAVE_SYS_UN_H -DHAVE_ALLOCA_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_ASSERT_H -DHAVE_ERR_H -DHAVE_ERRNO_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LIMITS_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SGTTY_H -DHAVE_SIGNAL_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDIO_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_STROPTS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_DLFCN_H -DHAVE_MALLOC_H -DHAVE_MEMORY_H -DHAVE_NETINET_IF_ETHER_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H   -o CMakeFiles/cmTC_baa84.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:257:22: error: ‘inet_ntoa_r’ undeclared (first use in this function)
+   func = (func_type)&inet_ntoa_r;
+                      ^~~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c:257:22: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_baa84.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_baa84.dir/CurlTests.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_baa84.dir/CurlTests.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_baa84/fast' failed
+make: *** [cmTC_baa84/fast] Error 2
+
+Performing Curl Test HAVE_GLIBC_STRERROR_R failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_941b8/fast"
+make -f CMakeFiles/cmTC_941b8.dir/build.make CMakeFiles/cmTC_941b8.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_941b8.dir/CurlTests.c.o
+/usr/bin/gcc   -w -DHAVE_GLIBC_STRERROR_R   -o CMakeFiles/cmTC_941b8.dir/CurlTests.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Utilities/cmcurl/CMake/CurlTests.c
+Linking C executable cmTC_941b8
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_941b8.dir/link.txt --verbose=1
+/usr/bin/gcc   -w -DHAVE_GLIBC_STRERROR_R    -rdynamic CMakeFiles/cmTC_941b8.dir/CurlTests.c.o  -o cmTC_941b8 
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+There was a problem running this test
+
+
+Determining if the off_t exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_97c97/fast"
+make -f CMakeFiles/cmTC_97c97.dir/build.make CMakeFiles/cmTC_97c97.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97c97.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_97c97.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: expected expression before ‘off_t’
+   return ((int*)(&off_t))[argc];
+                   ^~~~~
+CMakeFiles/cmTC_97c97.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_97c97.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_97c97.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_97c97/fast' failed
+make: *** [cmTC_97c97/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/types.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef off_t
+  return ((int*)(&off_t))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the size_t exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e8cd8/fast"
+make -f CMakeFiles/cmTC_e8cd8.dir/build.make CMakeFiles/cmTC_e8cd8.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e8cd8.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_e8cd8.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: expected expression before ‘size_t’
+   return ((int*)(&size_t))[argc];
+                   ^~~~~~
+CMakeFiles/cmTC_e8cd8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e8cd8.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e8cd8.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e8cd8/fast' failed
+make: *** [cmTC_e8cd8/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/types.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef size_t
+  return ((int*)(&size_t))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_INLINE failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0c461/fast"
+make -f CMakeFiles/cmTC_0c461.dir/build.make CMakeFiles/cmTC_0c461.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c461.dir/src.c.o
+/usr/bin/gcc   -DHAVE_INLINE   -o CMakeFiles/cmTC_0c461.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0c461
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_0c461.dir/link.txt --verbose=1
+/usr/bin/gcc  -DHAVE_INLINE    -rdynamic CMakeFiles/cmTC_0c461.dir/src.c.o  -o cmTC_0c461 
+CMakeFiles/cmTC_0c461.dir/src.c.o: In function `main':
+src.c:(.text+0x4): undefined reference to `test'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0c461.dir/build.make:97: recipe for target 'cmTC_0c461' failed
+make[1]: *** [cmTC_0c461] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0c461/fast' failed
+make: *** [cmTC_0c461/fast] Error 2
+
+Source file was:
+inline int test (void) {return 0;}
+int main (void) {return test();}
+Performing C SOURCE FILE Test HAVE___INLINE failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9f172/fast"
+make -f CMakeFiles/cmTC_9f172.dir/build.make CMakeFiles/cmTC_9f172.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9f172.dir/src.c.o
+/usr/bin/gcc   -DHAVE___INLINE   -o CMakeFiles/cmTC_9f172.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9f172
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_9f172.dir/link.txt --verbose=1
+/usr/bin/gcc  -DHAVE___INLINE    -rdynamic CMakeFiles/cmTC_9f172.dir/src.c.o  -o cmTC_9f172 
+CMakeFiles/cmTC_9f172.dir/src.c.o: In function `main':
+src.c:(.text+0x4): undefined reference to `test'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_9f172.dir/build.make:97: recipe for target 'cmTC_9f172' failed
+make[1]: *** [cmTC_9f172] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9f172/fast' failed
+make: *** [cmTC_9f172/fast] Error 2
+
+Source file was:
+__inline int test (void) {return 0;}
+int main (void) {return test();}
+Determining size of __int64 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_08ca3/fast"
+make -f CMakeFiles/cmTC_08ca3.dir/build.make CMakeFiles/cmTC_08ca3.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_08ca3.dir/__INT64.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_08ca3.dir/__INT64.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/__INT64.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/__INT64.c:17:22: error: ‘__int64’ undeclared here (not in a function)
+ #define SIZE (sizeof(__int64))
+                      ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/__INT64.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^~~~
+CMakeFiles/cmTC_08ca3.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_08ca3.dir/__INT64.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_08ca3.dir/__INT64.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_08ca3/fast' failed
+make: *** [cmTC_08ca3/fast] Error 2
+
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/__INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining size of unsigned __int64 failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ae89d/fast"
+make -f CMakeFiles/cmTC_ae89d.dir/build.make CMakeFiles/cmTC_ae89d.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ae89d.dir/UNSIGNED___INT64.c.o
+/usr/bin/gcc    -o CMakeFiles/cmTC_ae89d.dir/UNSIGNED___INT64.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:17:31: error: expected ‘)’ before ‘__int64’
+ #define SIZE (sizeof(unsigned __int64))
+                               ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:17:31: error: expected ‘)’ before ‘__int64’
+ #define SIZE (sizeof(unsigned __int64))
+                               ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:20:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 1000)%10)),
+            ^~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:17:31: error: expected ‘)’ before ‘__int64’
+ #define SIZE (sizeof(unsigned __int64))
+                               ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:21:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 100)%10)),
+            ^~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:17:31: error: expected ‘)’ before ‘__int64’
+ #define SIZE (sizeof(unsigned __int64))
+                               ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:22:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10)%10)),
+            ^~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:17:31: error: expected ‘)’ before ‘__int64’
+ #define SIZE (sizeof(unsigned __int64))
+                               ^
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:23:12: note: in expansion of macro ‘SIZE’
+   ('0' +  (SIZE    % 10)),
+            ^~~~
+CMakeFiles/cmTC_ae89d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ae89d.dir/UNSIGNED___INT64.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ae89d.dir/UNSIGNED___INT64.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ae89d/fast' failed
+make: *** [cmTC_ae89d/fast] Error 2
+
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CheckTypeSize/UNSIGNED___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(unsigned __int64))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the BZ2_bzCompressInit exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8066f/fast"
+make -f CMakeFiles/cmTC_8066f.dir/build.make CMakeFiles/cmTC_8066f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8066f.dir/CheckSymbolExists.c.o
+/usr/bin/gcc  -I/home/debian/ADALM2000/cmake-3.8.2/Utilities/cmbzip2  -w    -o CMakeFiles/cmTC_8066f.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_8066f
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_8066f.dir/link.txt --verbose=1
+/usr/bin/gcc  -w     -rdynamic CMakeFiles/cmTC_8066f.dir/CheckSymbolExists.c.o  -o cmTC_8066f -lcmbzip2 
+/usr/bin/ld: cannot find -lcmbzip2
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8066f.dir/build.make:97: recipe for target 'cmTC_8066f' failed
+make[1]: *** [cmTC_8066f] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8066f/fast' failed
+make: *** [cmTC_8066f/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <bzlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef BZ2_bzCompressInit
+  return ((int*)(&BZ2_bzCompressInit))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if files sys/types.h;ctype.h;copyfile.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_76abb/fast"
+make -f CMakeFiles/cmTC_76abb.dir/build.make CMakeFiles/cmTC_76abb.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_76abb.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_76abb.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:4:22: fatal error: copyfile.h: No such file or directory
+ #include <copyfile.h>
+                      ^
+compilation terminated.
+CMakeFiles/cmTC_76abb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_76abb.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_76abb.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_76abb/fast' failed
+make: *** [cmTC_76abb/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <copyfile.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;direct.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d2245/fast"
+make -f CMakeFiles/cmTC_d2245.dir/build.make CMakeFiles/cmTC_d2245.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d2245.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_d2245.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:4:20: fatal error: direct.h: No such file or directory
+ #include <direct.h>
+                    ^
+compilation terminated.
+CMakeFiles/cmTC_d2245.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d2245.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d2245.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d2245/fast' failed
+make: *** [cmTC_d2245/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <direct.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;ext2fs/ext2_fs.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e842e/fast"
+make -f CMakeFiles/cmTC_e842e.dir/build.make CMakeFiles/cmTC_e842e.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e842e.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_e842e.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:6:28: fatal error: ext2fs/ext2_fs.h: No such file or directory
+ #include <ext2fs/ext2_fs.h>
+                            ^
+compilation terminated.
+CMakeFiles/cmTC_e842e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e842e.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e842e.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e842e/fast' failed
+make: *** [cmTC_e842e/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <ext2fs/ext2_fs.h>
+
+
+int main(void){return 0;}
+
+Performing C SOURCE FILE Test HAVE_WORKING_EXT2_IOC_GETFLAGS failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ea652/fast"
+make -f CMakeFiles/cmTC_ea652.dir/build.make CMakeFiles/cmTC_ea652.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea652.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_WORKING_EXT2_IOC_GETFLAGS   -o CMakeFiles/cmTC_ea652.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:2:28: fatal error: ext2fs/ext2_fs.h: No such file or directory
+ #include <ext2fs/ext2_fs.h>
+                            ^
+compilation terminated.
+CMakeFiles/cmTC_ea652.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ea652.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ea652.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ea652/fast' failed
+make: *** [cmTC_ea652/fast] Error 2
+
+Source file was:
+#include <sys/ioctl.h>
+#include <ext2fs/ext2_fs.h>
+int main(void) { return EXT2_IOC_GETFLAGS; }
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;readpassphrase.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_684ac/fast"
+make -f CMakeFiles/cmTC_684ac.dir/build.make CMakeFiles/cmTC_684ac.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_684ac.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_684ac.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:20:28: fatal error: readpassphrase.h: No such file or directory
+ #include <readpassphrase.h>
+                            ^
+compilation terminated.
+CMakeFiles/cmTC_684ac.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_684ac.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_684ac.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_684ac/fast' failed
+make: *** [cmTC_684ac/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <readpassphrase.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;regex.h;signal.h;spawn.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/acl.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4ad0f/fast"
+make -f CMakeFiles/cmTC_4ad0f.dir/build.make CMakeFiles/cmTC_4ad0f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ad0f.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_4ad0f.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:28:21: fatal error: sys/acl.h: No such file or directory
+ #include <sys/acl.h>
+                     ^
+compilation terminated.
+CMakeFiles/cmTC_4ad0f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_4ad0f.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4ad0f.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4ad0f/fast' failed
+make: *** [cmTC_4ad0f/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <regex.h>
+#include <signal.h>
+#include <spawn.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/acl.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;regex.h;signal.h;spawn.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/cdefs.h;sys/ioctl.h;sys/mkdev.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_13e53/fast"
+make -f CMakeFiles/cmTC_13e53.dir/build.make CMakeFiles/cmTC_13e53.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13e53.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_13e53.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:30:23: fatal error: sys/mkdev.h: No such file or directory
+ #include <sys/mkdev.h>
+                       ^
+compilation terminated.
+CMakeFiles/cmTC_13e53.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_13e53.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_13e53.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_13e53/fast' failed
+make: *** [cmTC_13e53/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <regex.h>
+#include <signal.h>
+#include <spawn.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/cdefs.h>
+#include <sys/ioctl.h>
+#include <sys/mkdev.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;regex.h;signal.h;spawn.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/cdefs.h;sys/ioctl.h;sys/mount.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3f76e/fast"
+make -f CMakeFiles/cmTC_3f76e.dir/build.make CMakeFiles/cmTC_3f76e.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3f76e.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_3f76e.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+In file included from /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:13:0:
+/usr/include/arm-linux-gnueabihf/sys/mount.h:35:3: error: expected identifier before numeric constant
+   MS_RDONLY = 1,  /* Mount read-only.  */
+   ^
+CMakeFiles/cmTC_3f76e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3f76e.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3f76e.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3f76e/fast' failed
+make: *** [cmTC_3f76e/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <regex.h>
+#include <signal.h>
+#include <spawn.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/cdefs.h>
+#include <sys/ioctl.h>
+#include <sys/mount.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;regex.h;signal.h;spawn.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/cdefs.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/select.h;sys/stat.h;sys/statfs.h;sys/statvfs.h;sys/time.h;sys/utsname.h;sys/vfs.h;sys/wait.h;time.h;unistd.h;utime.h;wchar.h;wctype.h;windows.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9d523/fast"
+make -f CMakeFiles/cmTC_9d523.dir/build.make CMakeFiles/cmTC_9d523.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9d523.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_9d523.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:45:21: fatal error: windows.h: No such file or directory
+ #include <windows.h>
+                     ^
+compilation terminated.
+CMakeFiles/cmTC_9d523.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9d523.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9d523.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9d523/fast' failed
+make: *** [cmTC_9d523/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <regex.h>
+#include <signal.h>
+#include <spawn.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/cdefs.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/select.h>
+#include <sys/stat.h>
+#include <sys/statfs.h>
+#include <sys/statvfs.h>
+#include <sys/time.h>
+#include <sys/utsname.h>
+#include <sys/vfs.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <wchar.h>
+#include <wctype.h>
+#include <windows.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;regex.h;signal.h;spawn.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/cdefs.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/select.h;sys/stat.h;sys/statfs.h;sys/statvfs.h;sys/time.h;sys/utsname.h;sys/vfs.h;sys/wait.h;time.h;unistd.h;utime.h;wchar.h;wctype.h;wincrypt.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5c3d3/fast"
+make -f CMakeFiles/cmTC_5c3d3.dir/build.make CMakeFiles/cmTC_5c3d3.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5c3d3.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_5c3d3.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:45:22: fatal error: wincrypt.h: No such file or directory
+ #include <wincrypt.h>
+                      ^
+compilation terminated.
+CMakeFiles/cmTC_5c3d3.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5c3d3.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_5c3d3.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5c3d3/fast' failed
+make: *** [cmTC_5c3d3/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <regex.h>
+#include <signal.h>
+#include <spawn.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/cdefs.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/select.h>
+#include <sys/stat.h>
+#include <sys/statfs.h>
+#include <sys/statvfs.h>
+#include <sys/time.h>
+#include <sys/utsname.h>
+#include <sys/vfs.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <wchar.h>
+#include <wctype.h>
+#include <wincrypt.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/types.h;ctype.h;dlfcn.h;errno.h;fcntl.h;grp.h;inttypes.h;langinfo.h;limits.h;linux/types.h;linux/fiemap.h;linux/fs.h;linux/magic.h;locale.h;memory.h;paths.h;poll.h;pwd.h;regex.h;signal.h;spawn.h;stdarg.h;stdint.h;stdlib.h;string.h;strings.h;sys/cdefs.h;sys/ioctl.h;sys/param.h;sys/poll.h;sys/select.h;sys/stat.h;sys/statfs.h;sys/statvfs.h;sys/time.h;sys/utsname.h;sys/vfs.h;sys/wait.h;time.h;unistd.h;utime.h;wchar.h;wctype.h;winioctl.h exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_11aca/fast"
+make -f CMakeFiles/cmTC_11aca.dir/build.make CMakeFiles/cmTC_11aca.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_11aca.dir/CheckIncludeFiles.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_11aca.dir/CheckIncludeFiles.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:45:22: fatal error: winioctl.h: No such file or directory
+ #include <winioctl.h>
+                      ^
+compilation terminated.
+CMakeFiles/cmTC_11aca.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_11aca.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_11aca.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_11aca/fast' failed
+make: *** [cmTC_11aca/fast] Error 2
+
+Source:
+/* */
+#include <sys/types.h>
+#include <ctype.h>
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <grp.h>
+#include <inttypes.h>
+#include <langinfo.h>
+#include <limits.h>
+#include <linux/types.h>
+#include <linux/fiemap.h>
+#include <linux/fs.h>
+#include <linux/magic.h>
+#include <locale.h>
+#include <memory.h>
+#include <paths.h>
+#include <poll.h>
+#include <pwd.h>
+#include <regex.h>
+#include <signal.h>
+#include <spawn.h>
+#include <stdarg.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/cdefs.h>
+#include <sys/ioctl.h>
+#include <sys/param.h>
+#include <sys/poll.h>
+#include <sys/select.h>
+#include <sys/stat.h>
+#include <sys/statfs.h>
+#include <sys/statvfs.h>
+#include <sys/time.h>
+#include <sys/utsname.h>
+#include <sys/vfs.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+#include <utime.h>
+#include <wchar.h>
+#include <wctype.h>
+#include <winioctl.h>
+
+
+int main(void){return 0;}
+
+Determining if the _CrtSetReportMode exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ef846/fast"
+make -f CMakeFiles/cmTC_ef846.dir/build.make CMakeFiles/cmTC_ef846.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ef846.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w  -fno-builtin   -o CMakeFiles/cmTC_ef846.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:20: fatal error: crtdbg.h: No such file or directory
+ #include <crtdbg.h>
+                    ^
+compilation terminated.
+CMakeFiles/cmTC_ef846.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ef846.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ef846.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ef846/fast' failed
+make: *** [cmTC_ef846/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <crtdbg.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _CrtSetReportMode
+  return ((int*)(&_CrtSetReportMode))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function arc4random_buf exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3e98c/fast"
+make -f CMakeFiles/cmTC_3e98c.dir/build.make CMakeFiles/cmTC_3e98c.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3e98c.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=arc4random_buf  -fno-builtin   -o CMakeFiles/cmTC_3e98c.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3e98c
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_3e98c.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=arc4random_buf  -fno-builtin    -rdynamic CMakeFiles/cmTC_3e98c.dir/CheckFunctionExists.c.o  -o cmTC_3e98c 
+CMakeFiles/cmTC_3e98c.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `arc4random_buf'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_3e98c.dir/build.make:97: recipe for target 'cmTC_3e98c' failed
+make[1]: *** [cmTC_3e98c] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3e98c/fast' failed
+make: *** [cmTC_3e98c/fast] Error 2
+
+
+Determining if the function getvfsbyname exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6bc84/fast"
+make -f CMakeFiles/cmTC_6bc84.dir/build.make CMakeFiles/cmTC_6bc84.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6bc84.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=getvfsbyname  -fno-builtin   -o CMakeFiles/cmTC_6bc84.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6bc84
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_6bc84.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=getvfsbyname  -fno-builtin    -rdynamic CMakeFiles/cmTC_6bc84.dir/CheckFunctionExists.c.o  -o cmTC_6bc84 
+CMakeFiles/cmTC_6bc84.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `getvfsbyname'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_6bc84.dir/build.make:97: recipe for target 'cmTC_6bc84' failed
+make[1]: *** [cmTC_6bc84] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6bc84/fast' failed
+make: *** [cmTC_6bc84/fast] Error 2
+
+
+Determining if the function lchflags exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ed70e/fast"
+make -f CMakeFiles/cmTC_ed70e.dir/build.make CMakeFiles/cmTC_ed70e.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed70e.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=lchflags  -fno-builtin   -o CMakeFiles/cmTC_ed70e.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ed70e
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_ed70e.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=lchflags  -fno-builtin    -rdynamic CMakeFiles/cmTC_ed70e.dir/CheckFunctionExists.c.o  -o cmTC_ed70e 
+CMakeFiles/cmTC_ed70e.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `lchflags'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ed70e.dir/build.make:97: recipe for target 'cmTC_ed70e' failed
+make[1]: *** [cmTC_ed70e] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ed70e/fast' failed
+make: *** [cmTC_ed70e/fast] Error 2
+
+
+Determining if the function readpassphrase exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8be18/fast"
+make -f CMakeFiles/cmTC_8be18.dir/build.make CMakeFiles/cmTC_8be18.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8be18.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=readpassphrase  -fno-builtin   -o CMakeFiles/cmTC_8be18.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8be18
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_8be18.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=readpassphrase  -fno-builtin    -rdynamic CMakeFiles/cmTC_8be18.dir/CheckFunctionExists.c.o  -o cmTC_8be18 
+CMakeFiles/cmTC_8be18.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `readpassphrase'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8be18.dir/build.make:97: recipe for target 'cmTC_8be18' failed
+make[1]: *** [cmTC_8be18] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8be18/fast' failed
+make: *** [cmTC_8be18/fast] Error 2
+
+
+Determining if the function strncpy_s exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_26e72/fast"
+make -f CMakeFiles/cmTC_26e72.dir/build.make CMakeFiles/cmTC_26e72.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26e72.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=strncpy_s  -fno-builtin   -o CMakeFiles/cmTC_26e72.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_26e72
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_26e72.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=strncpy_s  -fno-builtin    -rdynamic CMakeFiles/cmTC_26e72.dir/CheckFunctionExists.c.o  -o cmTC_26e72 
+CMakeFiles/cmTC_26e72.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `strncpy_s'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_26e72.dir/build.make:97: recipe for target 'cmTC_26e72' failed
+make[1]: *** [cmTC_26e72] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_26e72/fast' failed
+make: *** [cmTC_26e72/fast] Error 2
+
+
+Determining if the function _ctime64_s exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a3229/fast"
+make -f CMakeFiles/cmTC_a3229.dir/build.make CMakeFiles/cmTC_a3229.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a3229.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=_ctime64_s  -fno-builtin   -o CMakeFiles/cmTC_a3229.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a3229
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_a3229.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=_ctime64_s  -fno-builtin    -rdynamic CMakeFiles/cmTC_a3229.dir/CheckFunctionExists.c.o  -o cmTC_a3229 
+CMakeFiles/cmTC_a3229.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `_ctime64_s'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a3229.dir/build.make:97: recipe for target 'cmTC_a3229' failed
+make[1]: *** [cmTC_a3229] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a3229/fast' failed
+make: *** [cmTC_a3229/fast] Error 2
+
+
+Determining if the function _fseeki64 exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eae84/fast"
+make -f CMakeFiles/cmTC_eae84.dir/build.make CMakeFiles/cmTC_eae84.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eae84.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=_fseeki64  -fno-builtin   -o CMakeFiles/cmTC_eae84.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_eae84
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_eae84.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=_fseeki64  -fno-builtin    -rdynamic CMakeFiles/cmTC_eae84.dir/CheckFunctionExists.c.o  -o cmTC_eae84 
+CMakeFiles/cmTC_eae84.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `_fseeki64'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_eae84.dir/build.make:97: recipe for target 'cmTC_eae84' failed
+make[1]: *** [cmTC_eae84] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_eae84/fast' failed
+make: *** [cmTC_eae84/fast] Error 2
+
+
+Determining if the function _get_timezone exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b0419/fast"
+make -f CMakeFiles/cmTC_b0419.dir/build.make CMakeFiles/cmTC_b0419.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0419.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=_get_timezone  -fno-builtin   -o CMakeFiles/cmTC_b0419.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b0419
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_b0419.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=_get_timezone  -fno-builtin    -rdynamic CMakeFiles/cmTC_b0419.dir/CheckFunctionExists.c.o  -o cmTC_b0419 
+CMakeFiles/cmTC_b0419.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `_get_timezone'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b0419.dir/build.make:97: recipe for target 'cmTC_b0419' failed
+make[1]: *** [cmTC_b0419] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b0419/fast' failed
+make: *** [cmTC_b0419/fast] Error 2
+
+
+Determining if the function _localtime64_s exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fa0cf/fast"
+make -f CMakeFiles/cmTC_fa0cf.dir/build.make CMakeFiles/cmTC_fa0cf.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fa0cf.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=_localtime64_s  -fno-builtin   -o CMakeFiles/cmTC_fa0cf.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fa0cf
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_fa0cf.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=_localtime64_s  -fno-builtin    -rdynamic CMakeFiles/cmTC_fa0cf.dir/CheckFunctionExists.c.o  -o cmTC_fa0cf 
+CMakeFiles/cmTC_fa0cf.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `_localtime64_s'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fa0cf.dir/build.make:97: recipe for target 'cmTC_fa0cf' failed
+make[1]: *** [cmTC_fa0cf] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_fa0cf/fast' failed
+make: *** [cmTC_fa0cf/fast] Error 2
+
+
+Determining if the function _mkgmtime64 exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_35c3a/fast"
+make -f CMakeFiles/cmTC_35c3a.dir/build.make CMakeFiles/cmTC_35c3a.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_35c3a.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=_mkgmtime64  -fno-builtin   -o CMakeFiles/cmTC_35c3a.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_35c3a
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_35c3a.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=_mkgmtime64  -fno-builtin    -rdynamic CMakeFiles/cmTC_35c3a.dir/CheckFunctionExists.c.o  -o cmTC_35c3a 
+CMakeFiles/cmTC_35c3a.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `_mkgmtime64'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_35c3a.dir/build.make:97: recipe for target 'cmTC_35c3a' failed
+make[1]: *** [cmTC_35c3a] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_35c3a/fast' failed
+make: *** [cmTC_35c3a/fast] Error 2
+
+
+Determining if the function cygwin_conv_path exists failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_68d5f/fast"
+make -f CMakeFiles/cmTC_68d5f.dir/build.make CMakeFiles/cmTC_68d5f.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_68d5f.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=cygwin_conv_path  -fno-builtin   -o CMakeFiles/cmTC_68d5f.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_68d5f
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_68d5f.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=cygwin_conv_path  -fno-builtin    -rdynamic CMakeFiles/cmTC_68d5f.dir/CheckFunctionExists.c.o  -o cmTC_68d5f 
+CMakeFiles/cmTC_68d5f.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0xa): undefined reference to `cygwin_conv_path'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_68d5f.dir/build.make:97: recipe for target 'cmTC_68d5f' failed
+make[1]: *** [cmTC_68d5f] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_68d5f/fast' failed
+make: *** [cmTC_68d5f/fast] Error 2
+
+
+Performing C SOURCE FILE Test MAJOR_IN_MKDEV failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_764a8/fast"
+make -f CMakeFiles/cmTC_764a8.dir/build.make CMakeFiles/cmTC_764a8.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_764a8.dir/src.c.o
+/usr/bin/gcc   -w -DMAJOR_IN_MKDEV   -o CMakeFiles/cmTC_764a8.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:1:23: fatal error: sys/mkdev.h: No such file or directory
+ #include <sys/mkdev.h>
+                       ^
+compilation terminated.
+CMakeFiles/cmTC_764a8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_764a8.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_764a8.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_764a8/fast' failed
+make: *** [cmTC_764a8/fast] Error 2
+
+Source file was:
+#include <sys/mkdev.h>
+int main() { return major(256); }
+Determining if the EFTYPE exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0f303/fast"
+make -f CMakeFiles/cmTC_0f303.dir/build.make CMakeFiles/cmTC_0f303.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f303.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_0f303.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘EFTYPE’ undeclared (first use in this function)
+   return ((int*)(&EFTYPE))[argc];
+                   ^~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_0f303.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_0f303.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0f303.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0f303/fast' failed
+make: *** [cmTC_0f303/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <errno.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef EFTYPE
+  return ((int*)(&EFTYPE))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the D_MD_ORDER exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_67950/fast"
+make -f CMakeFiles/cmTC_67950.dir/build.make CMakeFiles/cmTC_67950.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_67950.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_67950.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘D_MD_ORDER’ undeclared (first use in this function)
+   return ((int*)(&D_MD_ORDER))[argc];
+                   ^~~~~~~~~~
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_67950.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_67950.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_67950.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_67950/fast' failed
+make: *** [cmTC_67950/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <langinfo.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef D_MD_ORDER
+  return ((int*)(&D_MD_ORDER))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_TM___TM_GMTOFF failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_638ba/fast"
+make -f CMakeFiles/cmTC_638ba.dir/build.make CMakeFiles/cmTC_638ba.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_638ba.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_TM___TM_GMTOFF   -o CMakeFiles/cmTC_638ba.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:7:18: error: ‘struct tm’ has no member named ‘__tm_gmtoff’; did you mean ‘tm_gmtoff’?
+    if (sizeof(tmp.__tm_gmtoff))
+                  ^
+CMakeFiles/cmTC_638ba.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_638ba.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_638ba.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_638ba/fast' failed
+make: *** [cmTC_638ba/fast] Error 2
+
+Source file was:
+
+#include <time.h>
+
+int main()
+{
+   static struct tm tmp;
+   if (sizeof(tmp.__tm_gmtoff))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STATFS_F_NAMEMAX failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_56e20/fast"
+make -f CMakeFiles/cmTC_56e20.dir/build.make CMakeFiles/cmTC_56e20.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_56e20.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STATFS_F_NAMEMAX   -o CMakeFiles/cmTC_56e20.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:7:25: error: storage size of ‘tmp’ isn’t known
+    static struct statfs tmp;
+                         ^~~
+CMakeFiles/cmTC_56e20.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_56e20.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_56e20.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_56e20/fast' failed
+make: *** [cmTC_56e20/fast] Error 2
+
+Source file was:
+
+#include <sys/param.h>
+#include <sys/mount.h>
+
+int main()
+{
+   static struct statfs tmp;
+   if (sizeof(tmp.f_namemax))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_BIRTHTIME failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_901cf/fast"
+make -f CMakeFiles/cmTC_901cf.dir/build.make CMakeFiles/cmTC_901cf.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_901cf.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_BIRTHTIME   -o CMakeFiles/cmTC_901cf.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_birthtime’; did you mean ‘st_blksize’?
+    if (sizeof(tmp.st_birthtime))
+                  ^
+CMakeFiles/cmTC_901cf.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_901cf.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_901cf.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_901cf/fast' failed
+make: *** [cmTC_901cf/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_birthtime))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_BIRTHTIMESPEC_TV_NSEC failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e1330/fast"
+make -f CMakeFiles/cmTC_e1330.dir/build.make CMakeFiles/cmTC_e1330.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1330.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_BIRTHTIMESPEC_TV_NSEC   -o CMakeFiles/cmTC_e1330.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_birthtimespec’
+    if (sizeof(tmp.st_birthtimespec.tv_nsec))
+                  ^
+CMakeFiles/cmTC_e1330.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e1330.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e1330.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e1330/fast' failed
+make: *** [cmTC_e1330/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_birthtimespec.tv_nsec))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bbdf2/fast"
+make -f CMakeFiles/cmTC_bbdf2.dir/build.make CMakeFiles/cmTC_bbdf2.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bbdf2.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_MTIMESPEC_TV_NSEC   -o CMakeFiles/cmTC_bbdf2.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_mtimespec’; did you mean ‘st_mtim’?
+    if (sizeof(tmp.st_mtimespec.tv_nsec))
+                  ^
+CMakeFiles/cmTC_bbdf2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_bbdf2.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_bbdf2.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bbdf2/fast' failed
+make: *** [cmTC_bbdf2/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_mtimespec.tv_nsec))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIME_N failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_17cfe/fast"
+make -f CMakeFiles/cmTC_17cfe.dir/build.make CMakeFiles/cmTC_17cfe.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_17cfe.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_MTIME_N   -o CMakeFiles/cmTC_17cfe.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_mtime_n’; did you mean ‘st_mtim’?
+    if (sizeof(tmp.st_mtime_n))
+                  ^
+CMakeFiles/cmTC_17cfe.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_17cfe.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_17cfe.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_17cfe/fast' failed
+make: *** [cmTC_17cfe/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_mtime_n))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_UMTIME failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8b4a1/fast"
+make -f CMakeFiles/cmTC_8b4a1.dir/build.make CMakeFiles/cmTC_8b4a1.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8b4a1.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_UMTIME   -o CMakeFiles/cmTC_8b4a1.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_umtime’; did you mean ‘st_mtim’?
+    if (sizeof(tmp.st_umtime))
+                  ^
+CMakeFiles/cmTC_8b4a1.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8b4a1.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_8b4a1.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8b4a1/fast' failed
+make: *** [cmTC_8b4a1/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_umtime))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_MTIME_USEC failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_59e90/fast"
+make -f CMakeFiles/cmTC_59e90.dir/build.make CMakeFiles/cmTC_59e90.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_59e90.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_MTIME_USEC   -o CMakeFiles/cmTC_59e90.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_mtime_usec’; did you mean ‘st_mtim’?
+    if (sizeof(tmp.st_mtime_usec))
+                  ^
+CMakeFiles/cmTC_59e90.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_59e90.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_59e90.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_59e90/fast' failed
+make: *** [cmTC_59e90/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_mtime_usec))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STAT_ST_FLAGS failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_73413/fast"
+make -f CMakeFiles/cmTC_73413.dir/build.make CMakeFiles/cmTC_73413.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73413.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STAT_ST_FLAGS   -o CMakeFiles/cmTC_73413.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct stat’ has no member named ‘st_flags’; did you mean ‘st_nlink’?
+    if (sizeof(tmp.st_flags))
+                  ^
+CMakeFiles/cmTC_73413.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_73413.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_73413.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_73413/fast' failed
+make: *** [cmTC_73413/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/stat.h>
+
+int main()
+{
+   static struct stat tmp;
+   if (sizeof(tmp.st_flags))
+      return 0;
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_STRUCT_STATVFS_F_IOSIZE failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_22a51/fast"
+make -f CMakeFiles/cmTC_22a51.dir/build.make CMakeFiles/cmTC_22a51.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_22a51.dir/src.c.o
+/usr/bin/gcc   -w -DHAVE_STRUCT_STATVFS_F_IOSIZE   -o CMakeFiles/cmTC_22a51.dir/src.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/src.c:8:18: error: ‘struct statvfs’ has no member named ‘f_iosize’; did you mean ‘f_bsize’?
+    if (sizeof(tmp.f_iosize))
+                  ^
+CMakeFiles/cmTC_22a51.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_22a51.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_22a51.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_22a51/fast' failed
+make: *** [cmTC_22a51/fast] Error 2
+
+Source file was:
+
+#include <sys/types.h>
+#include <sys/statvfs.h>
+
+int main()
+{
+   static struct statvfs tmp;
+   if (sizeof(tmp.f_iosize))
+      return 0;
+  return 0;
+}
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bc90a/fast"
+make -f CMakeFiles/cmTC_bc90a.dir/build.make CMakeFiles/cmTC_bc90a.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bc90a.dir/CheckSymbolExists.c.o
+/usr/bin/gcc   -w    -o CMakeFiles/cmTC_bc90a.dir/CheckSymbolExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bc90a
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_bc90a.dir/link.txt --verbose=1
+/usr/bin/gcc  -w     -rdynamic CMakeFiles/cmTC_bc90a.dir/CheckSymbolExists.c.o  -o cmTC_bc90a 
+CMakeFiles/cmTC_bc90a.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x2c): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_bc90a.dir/build.make:97: recipe for target 'cmTC_bc90a' failed
+make[1]: *** [cmTC_bc90a] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bc90a/fast' failed
+make: *** [cmTC_bc90a/fast] Error 2
+
+File /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f9441/fast"
+make -f CMakeFiles/cmTC_f9441.dir/build.make CMakeFiles/cmTC_f9441.dir/build
+make[1]: Entering directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f9441.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -w -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f9441.dir/CheckFunctionExists.c.o   -c /home/debian/ADALM2000/cmake-3.8.2/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f9441
+/home/debian/ADALM2000/cmake-3.8.2/Bootstrap.cmk/cmake -E cmake_link_script CMakeFiles/cmTC_f9441.dir/link.txt --verbose=1
+/usr/bin/gcc  -w -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f9441.dir/CheckFunctionExists.c.o  -o cmTC_f9441 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f9441.dir/build.make:97: recipe for target 'cmTC_f9441' failed
+make[1]: *** [cmTC_f9441] Error 1
+make[1]: Leaving directory '/home/debian/ADALM2000/cmake-3.8.2/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f9441/fast' failed
+make: *** [cmTC_f9441/fast] Error 2
+
+
+Looking for a Fortran compiler failed with the following output:
+-- The Fortran compiler identification is unknown
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_Fortran_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "FC" or the CMake cache entry CMAKE_Fortran_COMPILER to the full
+  path to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/debian/ADALM2000/cmake-3.8.2/Tests/CMakeFiles/CheckFortran/CMakeFiles/CMakeOutput.log".
+See also "/home/debian/ADALM2000/cmake-3.8.2/Tests/CMakeFiles/CheckFortran/CMakeFiles/CMakeError.log".
+
