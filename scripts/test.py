@@ -8,10 +8,10 @@ from time import sleep
 #ctx=analogoutSquarewave.analogoutSquarewave(channels=[0,1],voltage1s=[0.,0.],voltage2s=[2.0,2.0],timeoffsets=[0.,2.5e-6],timeRatio1=0.5,timeperiod=1.0e-5,verbose=0); # CH1: signal, CH2:quad
 
 # 10kHz
-#ctx=analogoutSquarewave.analogoutSquarewave(channels=[0,1],voltage1s=[0.,0.],voltage2s=[2.0,2.0],timeoffsets=[0.,2.5e-5],timeRatio1=0.5,timeperiod=1.0e-4,verbose=0); # CH1: signal, CH2:quad
+ctx=analogoutSquarewave.analogoutSquarewave(channels=[0,1],voltage1s=[0.,0.],voltage2s=[2.0,2.0],timeoffsets=[0.,2.5e-5],timeRatio1=0.5,timeperiod=1.0e-4,verbose=0); # CH1: signal, CH2:quad
 
 # 1kHz
-ctx=analogoutSquarewave.analogoutSquarewave(channels=[0,1],voltage1s=[0.,0.],voltage2s=[2.0,2.0],timeoffsets=[0.,2.5e-4],timeRatio1=0.5,timeperiod=1.0e-3,verbose=0); # CH1: signal, CH2:quad
+#ctx=analogoutSquarewave.analogoutSquarewave(channels=[0,1],voltage1s=[0.,0.],voltage2s=[2.0,2.0],timeoffsets=[0.,2.5e-4],timeRatio1=0.5,timeperiod=1.0e-3,verbose=0); # CH1: signal, CH2:quad
 
 # 1 pulse per 0.1 sec on ch 0  for Z  signal
 ctx=digitaloutSinglePulse.digitaloutSinglePulse(ctx=ctx, timeperiod=0.1, timeON=1.0e-5, samplerate = 1e+6, channels=[1], timeoffsets=[0.,0.,0.,0.],doPlot=False, verbose=0);
@@ -37,6 +37,7 @@ ctx=digitaloutSinglePulse.digitaloutSinglePulse(ctx=ctx, timeperiod=0.1, timeON=
 #ctx=digitaloutSinglePulse.digitaloutSinglePulse(ctx=ctx, timeperiod=0.1, timeON=0.01, samplerate = 1000, channels=[1], timeoffsets=[0.],doPlot=True, recordNperiod=5, outputname='aho.png', verbose=2); # for test
 #ctx=digitaloutSinglePulse.digitaloutSinglePulse(ctx=ctx, timeperiod=0.1, timeON=0.01, samplerate = 1000, channels=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], timeoffsets=[0.]*16,doPlot=True, recordNperiod=5, outputname='aho.png', verbose=2); # for test
 
+ctx = analogin.analogin(ctx=ctx,channels=[0],nMeasure=1,samplerate=1e+5,timelength=1.0e-3,outputName='aho',overlapPlot=False);
 
 
 #analogin.closeCtx(ctx);
